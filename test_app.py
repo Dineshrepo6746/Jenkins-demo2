@@ -1,11 +1,12 @@
 import unittest
-from app import add
+from app import is_palindrome
 
 class TestApp(unittest.TestCase):
-    def test_add(self):
-        self.assertEqual(add(2, 3), 5)
-        self.assertEqual(add(-1, 1), 0)
-        self.assertEqual(add(0, 0), 0)
+    def test_palindrome(self):
+        self.assertTrue(is_palindrome("Racecar"))
+        self.assertTrue(is_palindrome("A man, a plan, a canal: Panama"))
+        self.assertFalse(is_palindrome("hello"))
+        self.assertFalse(is_palindrome("Python"))
 
 if __name__ == '__main__':
     unittest.main()
